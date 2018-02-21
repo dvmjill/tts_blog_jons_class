@@ -1,0 +1,11 @@
+<h1>This is our Show page</h1>
+<h3><%= @post.title %></h3><br>
+<p><%= @post.body %></p>
+<p>Date Written: <%= @post.created_at %></p>
+<br>
+<br>
+<br>
+<%= link_to 'Back to All Posts', posts_path %>
+<br>
+<br>
+<%= link_to 'Show All Users', users_path %>

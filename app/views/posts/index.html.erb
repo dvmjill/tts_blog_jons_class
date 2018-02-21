@@ -1,0 +1,16 @@
+<h2 class="first_thing">All Blogs</h2>
+
+<ol class='jon'>
+  <% @posts.each do |post| %>
+    <li><%= post.title %></li>
+    <a href="/posts/<%=post.id%>">Go to this post</a>
+    <%= link_to 'Go to post', post %>
+    <%= link_to 'Delete this post', post, {method: 'delete'} %>
+    <%= link_to 'Edit this post', edit_post_path(post) %>
+
+  <% end %>
+
+  <br>
+  <br>
+  <%= link_to 'Show All Users', users_path %>
+</ol>

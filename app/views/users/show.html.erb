@@ -1,0 +1,22 @@
+<h1>This is our Show page for Users, and the code needs to be updated!!</h1>
+<h3>Username:   <%= @user.username %></h3><br>
+
+<p>Date You Joined Our Blogging Community: <%= @user.created_at %></p>
+<h2>Here's All the stuff you've written: </h2>
+<ol>
+  <% @posts.each do |post| %>
+    <li>
+      Title: <%= post.title.upcase %> by Author: <%= post.user.username %>
+    <a href="/posts/<%=post.id%>">Go to this post</a>
+    <%= link_to 'Go to post', post %>
+    <%= link_to 'Delete this post', post, {method: 'delete'} %>
+    <%= link_to 'Edit this post', edit_post_path(post) %>
+    <br>
+    </li>
+    <br>
+  <% end %>
+</ol>
+<%= link_to 'Back to All Users', users_path %>
+<br>
+<br>
+<%= link_to 'Back to All Posts', posts_path %>
