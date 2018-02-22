@@ -18,7 +18,7 @@
   font-style: oblique;
   font-family: cursive;
   font-size: 2em;
-  position: absolute;
+  position: relative;
   justify-content: center;
 }
 
@@ -27,4 +27,59 @@
   font-size: 20px;
   font-family: sans-serif;
   font-style: normal;
+}
+
+.welcome_stuff {
+  color: #660033;
+  font-family: fantasy;
+  font-size: 30px;
+  font-style: normal;
+}
+
+.pretty {
+  color: green;
+  font-family: cursive;
+  font-size: 25px;
+  font-style: oblique;
+}
+
+.n_user {
+  color: #660033;
+  font-family: cursive;
+  font-variant: normal;
+  font-size: 35px;
+  font-style: oblique;
+  position: relative;
+}
+
+.log_out {
+  font-family: monospace;
+  font-size: 40px;
+  color: blue;
+  background-color: pink;
+  border-radius: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  position:relative;
+  justify-content:center;
+
+
+}
+
+.log_in {
+  font-family: monospace;
+  font-size: 40px;
+  color: pink;
+  background-color: chartreuse;
+  border-radius: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  position:relative;
+  justify-content:center;
+}
+
+.bold {
+  color:purple;
+  font-family: cursive;
+  font-weight: bold;
 }

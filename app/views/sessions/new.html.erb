@@ -1,0 +1,25 @@
+<h1 class="welcome_stuff">Welcome to Our Blog Page!</h1>
+  <h2 class="pretty">Here, you'll be able to sign up as a user, make posts of your own, and add comments to other users' posts. Have fun!</h2>
+<br>
+<br>
+
+
+<h1>Already Have and Account? Log in!</h1>
+
+<%= form_for @user, { url: {controller: 'sessions', action: "create"} } do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %><br>
+
+  <%= f.submit 'Login' %>
+
+<% end %>
+
+<div class="n_user">
+
+  <p>
+<%= link_to 'Don\'t Have An Account? Click Here to Create One! ', new_user_path %>
+</p>
+</div>

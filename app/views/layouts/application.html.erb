@@ -9,7 +9,11 @@
   </head>
 
   <body>
-    <h1>Hello Layout</h1>
     <%= yield %>
+    <br>
+    <br>
+    <p class="log_out">
+    <%= link_to 'Log Out', new_session_path %>
+  </p>
   </body>
 </html>
