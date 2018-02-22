@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-    root    'posts#index'
+    root    'sessions#new'
     get     'posts'           => 'posts#index',     as: 'posts'
     post    'posts'           => 'posts#create'
     get     'posts/new'       => 'posts#new',       as: 'new_post'
@@ -17,13 +17,22 @@ Rails.application.routes.draw do
     patch   'users/:id'       => 'users#update'
     get     'users/:id/edit'  => 'users#edit',      as: 'edit_user'
 
-    get     'comments'           => 'comments#index',     as: 'comments'
-    post    'comments'           => 'comments#create'
-    get     'comments/new'       => 'comments#new',       as: 'new_comment'
-    get     'comments/:id'       => 'comments#show',      as: 'comment'
-    delete  'comments/:id'       => 'comments#destroy'
-    patch   'comments/:id'       => 'comments#update'
-    get     'comments/:id/edit'  => 'comments#edit',      as: 'edit_comment'
+    get     'posts/:post_id/comments/new'     => 'comments#new',      as: 'new_comment'
+    post    'posts/:post_id/comments'         => 'comments#create', as: 'post_comments'
+    get     'comments/:id'                    => 'comments#show',   as: 'comment'
+
+    get     'login'                           => 'sessions#new',     as: 'new_session'
+    post    'login'                           => 'sessions#create'
+
+    # get     'comments'           => 'comments#index',     as: 'comments'
+    # post    'comments'           => 'comments#create'
+    # get     'comments/new'       => 'comments#new',       as: 'new_comment'
+    # get     'comments/:id'       => 'comments#show',      as: 'comment'
+    # delete  'comments/:id'       => 'comments#destroy'
+    # patch   'comments/:id'       => 'comments#update'
+    # get     'comments/:id/edit'  => 'comments#edit',      as: 'edit_comment'
+
+
 
 
 

@@ -7,12 +7,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    username = params[:user][:username]
-    password = params[:user][:password_digest]
-    new_user = User.new(username: username, password: password)
+    new_user = User.new(user_params)
     new_user.save
     session[:user_id] = new_user.id
-
     redirect_to user_path new_user
   end
 
@@ -25,4 +22,24 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-end
+
+
+  # def login_page
+  #   @user=User.new
+  #
+  #
+  # end
+  #
+  # def authenticate
+  #   username = params[:user][:username]
+  #   password = params[:user][:password_digest]
+  #
+  # end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:username, :password)
+    end
+
+  end

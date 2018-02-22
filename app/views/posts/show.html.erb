@@ -1,9 +1,14 @@
-<h1>This is our Show page</h1>
-<h3><%= @post.title %></h3><br>
-<p><%= @post.body %></p>
-<p>Date Written: <%= @post.created_at %></p>
+<h1>This Page Shows a Post Written By: <%= @post.user.username %></h1>
+<p><span class="bold"><%= @post.title%>:    </span><%= @post.body %>   <span class="bold">Date Written:   </span> <%= @post.created_at %></p>
 <br>
+<p>Comments: </p>
+<ul>
+  <% @post.comments.each do |comment| %>
+  <li><%= comment.user.username%> : <%=comment.content %></li>
+  <% end %>
+</ul>
 <br>
+<%= link_to 'New Comment', new_comment_path(@post) %>
 <br>
 <%= link_to 'Back to All Posts', posts_path %>
 <br>

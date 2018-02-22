@@ -1,1 +1,8 @@
 <h2>new.html.erb for comments</h2>
+
+<%= form_for [@post, @comment] do |f| %>
+<%= f.label :content %>
+<%= f.text_field :content %><br>
+<%= f.submit %>
+
+<% end %>
