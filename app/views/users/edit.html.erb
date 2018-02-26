@@ -1,1 +1,14 @@
 <h1>this is the edit page for users, and it needs some form shit to show up in here!</h1>
+
+
+<%= form_for @user do |f| %>
+
+<%=f.label :username %>
+<%=f.text_field :username %><br>
+
+<%=f.label :password %>
+<%=f.text_field :password%><br><br>
+<%=f.submit %>
+
+
+<% end %>
