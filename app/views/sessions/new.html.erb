@@ -4,8 +4,8 @@
 <br>
 
 
-<h1>Already Have and Account? Log in!</h1>
-
+<h1>Already Have an Account? Log in!</h1>
+<%= render 'partials/errors' %>
 <%= form_for @user, { url: {controller: 'sessions', action: "create"} } do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %><br>
